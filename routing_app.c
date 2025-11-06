@@ -719,7 +719,7 @@ void printJsonCompareResult(Graph* g, RoutingResult results[], int count) {
         }
     }
     printf("]"); 
-
+}
 
 /**
  * NEW: main() function

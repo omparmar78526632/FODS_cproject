@@ -17,8 +17,8 @@ app.post('/calculate_route', (req, res) => {
   const { source, destination, algorithm } = req.body;
 
   // 1. Get the path to the C executable
-  //    (Assumes 'routing_app' is in the same folder as 'server.js')
-  const programPath = path.join(__dirname, 'routing_app');
+  //    (On Windows the compiled executable will be 'routing_app.exe')
+  const programPath = path.join(__dirname, process.platform === 'win32' ? 'routing_app.exe' : 'routing_app');
 
   // 2. Define the arguments for the C program
   const args = [source, destination, algorithm];
